@@ -1,0 +1,252 @@
+COV1902             *** COUNTRIES REPORT ***                Date:   05/20/2020  Time:   10:47:03            
+CODE  NAME                                                SLUG
+====  ==================================================  ==================================================
+ AD   Andorra                                             andorra
+ AE   United Arab Emirates                                united-arab-emirates
+ AF   Afghanistan                                         afghanistan
+ AG   Antigua and Barbuda                                 antigua-and-barbuda
+ AI   Anguilla                                            anguilla
+ AL   Albania                                             albania
+ AM   Armenia                                             armenia
+ AN   Netherlands Antilles                                netherlands-antilles
+ AO   Angola                                              angola
+ AQ   Antarctica                                          antarctica
+ AR   Argentina                                           argentina
+ AS   American Samoa                                      american-samoa
+ AT   Austria                                             austria
+ AU   Australia                                           australia
+ AW   Aruba                                               aruba
+ AX   ALA Aland Islands                                   ala-aland-islands
+ AZ   Azerbaijan                                          azerbaijan
+ BA   Bosnia and Herzegovina                              bosnia-and-herzegovina
+ BB   Barbados                                            barbados
+ BD   Bangladesh                                          bangladesh
+ BE   Belgium                                             belgium
+ BF   Burkina Faso                                        burkina-faso
+ BG   Bulgaria                                            bulgaria
+ BH   Bahrain                                             bahrain
+ BI   Burundi                                             burundi
+ BJ   Benin                                               benin
+ BL   Saint-Barthélemy                                    saint-barthélemy
+ BM   Bermuda                                             bermuda
+ BN   Brunei Darussalam                                   brunei
+ BO   Bolivia                                             bolivia
+ BR   Brazil                                              brazil
+ BS   Bahamas                                             bahamas
+ BT   Bhutan                                              bhutan
+ BV   Bouvet Island                                       bouvet-island
+ BW   Botswana                                            botswana
+ BY   Belarus                                             belarus
+ BZ   Belize                                              belize
+ CA   Canada                                              canada
+ CC   Cocos (Keeling) Islands                             cocos-keeling-islands
+ CD   Congo (Kinshasa)                                    congo-kinshasa
+ CF   Central African Republic                            central-african-republic
+ CG   Congo (Brazzaville)                                 congo-brazzaville
+ CH   Switzerland                                         switzerland
+ CI   Côte d'Ivoire                                       cote-divoire
+ CK   Cook Islands                                        cook-islands
+ CL   Chile                                               chile
+ CM   Cameroon                                            cameroon
+ CN   China                                               china
+ CO   Colombia                                            colombia
+ CR   Costa Rica                                          costa-rica
+ CU   Cuba                                                cuba
+ CV   Cape Verde                                          cape-verde
+ CX   Christmas Island                                    christmas-island
+ CY   Cyprus                                              cyprus
+ CZ   Czech Republic                                      czech-republic
+ DE   Germany                                             germany
+ DJ   Djibouti                                            djibouti
+ DK   Denmark                                             denmark
+ DM   Dominica                                            dominica
+ DO   Dominican Republic                                  dominican-republic
+ DZ   Algeria                                             algeria
+ EC   Ecuador                                             ecuador
+ EE   Estonia                                             estonia
+ EG   Egypt                                               egypt
+ EH   Western Sahara                                      western-sahara
+ ER   Eritrea                                             eritrea
+ ES   Spain                                               spain
+ ET   Ethiopia                                            ethiopia
+ FI   Finland                                             finland
+ FJ   Fiji                                                fiji
+ FK   Falkland Islands (Malvinas)                         falkland-islands-malvinas
+ FM   Micronesia, Federated States of                     micronesia
+ FO   Faroe Islands                                       faroe-islands
+ FR   France                                              france
+ GA   Gabon                                               gabon
+ GB   United Kingdom                                      united-kingdom
+ GD   Grenada                                             grenada
+ GE   Georgia                                             georgia
+ GF   French Guiana                                       french-guiana
+ GG   Guernsey                                            guernsey
+ GH   Ghana                                               ghana
+ GI   Gibraltar                                           gibraltar
+ GL   Greenland                                           greenland
+ GM   Gambia                                              gambia
+ GN   Guinea                                              guinea
+ GP   Guadeloupe                                          guadeloupe
+ GQ   Equatorial Guinea                                   equatorial-guinea
+ GR   Greece                                              greece
+ GS   South Georgia and the South Sandwich Islands        south-georgia-and-the-south-sandwich-islands
+ GT   Guatemala                                           guatemala
+ GU   Guam                                                guam
+ GW   Guinea-Bissau                                       guinea-bissau
+ GY   Guyana                                              guyana
+ HK   Hong Kong, SAR China                                hong-kong-sar-china
+ HM   Heard and Mcdonald Islands                          heard-and-mcdonald-islands
+ HN   Honduras                                            honduras
+ HR   Croatia                                             croatia
+ HT   Haiti                                               haiti
+ HU   Hungary                                             hungary
+ ID   Indonesia                                           indonesia
+ IE   Ireland                                             ireland
+ IL   Israel                                              israel
+ IM   Isle of Man                                         isle-of-man
+ IN   India                                               india
+ IO   British Indian Ocean Territory                      british-indian-ocean-territory
+ IQ   Iraq                                                iraq
+ IR   Iran, Islamic Republic of                           iran
+ IS   Iceland                                             iceland
+ IT   Italy                                               italy
+ JE   Jersey                                              jersey
+ JM   Jamaica                                             jamaica
+ JO   Jordan                                              jordan
+ JP   Japan                                               japan
+ KE   Kenya                                               kenya
+ KG   Kyrgyzstan                                          kyrgyzstan
+ KH   Cambodia                                            cambodia
+ KI   Kiribati                                            kiribati
+ KM   Comoros                                             comoros
+ KN   Saint Kitts and Nevis                               saint-kitts-and-nevis
+ KP   Korea (North)                                       korea-north
+ KR   Korea (South)                                       korea-south
+ KW   Kuwait                                              kuwait
+ KY   Cayman Islands                                      cayman-islands
+ KZ   Kazakhstan                                          kazakhstan
+ LA   Lao PDR                                             lao-pdr
+ LB   Lebanon                                             lebanon
+ LC   Saint Lucia                                         saint-lucia
+ LI   Liechtenstein                                       liechtenstein
+ LK   Sri Lanka                                           sri-lanka
+ LR   Liberia                                             liberia
+ LS   Lesotho                                             lesotho
+ LT   Lithuania                                           lithuania
+ LU   Luxembourg                                          luxembourg
+ LV   Latvia                                              latvia
+ LY   Libya                                               libya
+ MA   Morocco                                             morocco
+ MC   Monaco                                              monaco
+ MD   Moldova                                             moldova
+ ME   Montenegro                                          montenegro
+ MF   Saint-Martin (French part)                          saint-martin-french-part
+ MG   Madagascar                                          madagascar
+ MH   Marshall Islands                                    marshall-islands
+ MK   Macedonia, Republic of                              macedonia
+ ML   Mali                                                mali
+ MM   Myanmar                                             myanmar
+ MN   Mongolia                                            mongolia
+ MO   Macao, SAR China                                    macao-sar-china
+ MP   Northern Mariana Islands                            northern-mariana-islands
+ MQ   Martinique                                          martinique
+ MR   Mauritania                                          mauritania
+ MS   Montserrat                                          montserrat
+ MT   Malta                                               malta
+ MU   Mauritius                                           mauritius
+ MV   Maldives                                            maldives
+ MW   Malawi                                              malawi
+ MX   Mexico                                              mexico
+ MY   Malaysia                                            malaysia
+ MZ   Mozambique                                          mozambique
+ NA   Namibia                                             namibia
+ NC   New Caledonia                                       new-caledonia
+ NE   Niger                                               niger
+ NF   Norfolk Island                                      norfolk-island
+ NG   Nigeria                                             nigeria
+ NI   Nicaragua                                           nicaragua
+ NL   Netherlands                                         netherlands
+ NO   Norway                                              norway
+ NP   Nepal                                               nepal
+ NR   Nauru                                               nauru
+ NU   Niue                                                niue
+ NZ   New Zealand                                         new-zealand
+ OM   Oman                                                oman
+ PA   Panama                                              panama
+ PE   Peru                                                peru
+ PF   French Polynesia                                    french-polynesia
+ PG   Papua New Guinea                                    papua-new-guinea
+ PH   Philippines                                         philippines
+ PK   Pakistan                                            pakistan
+ PL   Poland                                              poland
+ PM   Saint Pierre and Miquelon                           saint-pierre-and-miquelon
+ PN   Pitcairn                                            pitcairn
+ PR   Puerto Rico                                         puerto-rico
+ PS   Palestinian Territory                               palestine
+ PT   Portugal                                            portugal
+ PW   Palau                                               palau
+ PY   Paraguay                                            paraguay
+ QA   Qatar                                               qatar
+ RE   Réunion                                             réunion
+ RO   Romania                                             romania
+ RS   Serbia                                              serbia
+ RU   Russian Federation                                  russia
+ RW   Rwanda                                              rwanda
+ SA   Saudi Arabia                                        saudi-arabia
+ SB   Solomon Islands                                     solomon-islands
+ SC   Seychelles                                          seychelles
+ SD   Sudan                                               sudan
+ SE   Sweden                                              sweden
+ SG   Singapore                                           singapore
+ SH   Saint Helena                                        saint-helena
+ SI   Slovenia                                            slovenia
+ SJ   Svalbard and Jan Mayen Islands                      svalbard-and-jan-mayen-islands
+ SK   Slovakia                                            slovakia
+ SL   Sierra Leone                                        sierra-leone
+ SM   San Marino                                          san-marino
+ SN   Senegal                                             senegal
+ SO   Somalia                                             somalia
+ SR   Suriname                                            suriname
+ SS   South Sudan                                         south-sudan
+ ST   Sao Tome and Principe                               sao-tome-and-principe
+ SV   El Salvador                                         el-salvador
+ SY   Syrian Arab Republic (Syria)                        syria
+ SZ   Swaziland                                           swaziland
+ TC   Turks and Caicos Islands                            turks-and-caicos-islands
+ TD   Chad                                                chad
+ TF   French Southern Territories                         french-southern-territories
+ TG   Togo                                                togo
+ TH   Thailand                                            thailand
+ TJ   Tajikistan                                          tajikistan
+ TK   Tokelau                                             tokelau
+ TL   Timor-Leste                                         timor-leste
+ TM   Turkmenistan                                        turkmenistan
+ TN   Tunisia                                             tunisia
+ TO   Tonga                                               tonga
+ TR   Turkey                                              turkey
+ TT   Trinidad and Tobago                                 trinidad-and-tobago
+ TV   Tuvalu                                              tuvalu
+ TW   Taiwan, Republic of China                           taiwan
+ TZ   Tanzania, United Republic of                        tanzania
+ UA   Ukraine                                             ukraine
+ UG   Uganda                                              uganda
+ UM   US Minor Outlying Islands                           us-minor-outlying-islands
+ US   United States of America                            united-states
+ UY   Uruguay                                             uruguay
+ UZ   Uzbekistan                                          uzbekistan
+ VA   Holy See (Vatican City State)                       holy-see-vatican-city-state
+ VC   Saint Vincent and Grenadines                        saint-vincent-and-the-grenadines
+ VE   Venezuela (Bolivarian Republic)                     venezuela
+ VG   British Virgin Islands                              british-virgin-islands
+ VI   Virgin Islands, US                                  virgin-islands
+ VN   Viet Nam                                            vietnam
+ VU   Vanuatu                                             vanuatu
+ WF   Wallis and Futuna Islands                           wallis-and-futuna-islands
+ WS   Samoa                                               samoa
+ XK   Republic of Kosovo                                  kosovo
+ YE   Yemen                                               yemen
+ YT   Mayotte                                             mayotte
+ ZA   South Africa                                        south-africa
+ ZM   Zambia                                              zambia
+ ZW   Zimbabwe                                            zimbabwe
+*** End of Countries Report.      248 Countries were found. ***
