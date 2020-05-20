@@ -8,4 +8,3 @@
            03 :TAG2:-CODE               PIC X(02).
            03 :TAG2:-NAME               PIC X(50).
            03 :TAG2:-SLUG               PIC X(50).
-      
