@@ -11,9 +11,9 @@
                07 :TAG2:-DATE-YEAR     PIC 9(04).
                07 :TAG2:-DATE-MONTH    PIC 9(02).
                07 :TAG2:-DATE-DAY      PIC 9(02).
-           03 :TAG2:-NEW-CONFIRMED     PIC 9(05) COMP-3.
-           03 :TAG2:-TOTAL-CONFIRMED   PIC 9(05) COMP-3.
-           03 :TAG2:-NEW-DEATHS        PIC 9(05) COMP-3.
-           03 :TAG2:-TOTAL-DEATHS      PIC 9(05) COMP-3.
-           03 :TAG2:-NEW-RECOVERED     PIC 9(05) COMP-3.
-           03 :TAG2:-TOTAL-RECOVERED   PIC 9(05) COMP-3.
+           03 :TAG2:-NEW-CONFIRMED     PIC 9(09) COMP-3.
+           03 :TAG2:-TOTAL-CONFIRMED   PIC 9(09) COMP-3.
+           03 :TAG2:-NEW-DEATHS        PIC 9(09) COMP-3.
+           03 :TAG2:-TOTAL-DEATHS      PIC 9(09) COMP-3.
+           03 :TAG2:-NEW-RECOVERED     PIC 9(09) COMP-3.
+           03 :TAG2:-TOTAL-RECOVERED   PIC 9(09) COMP-3.
