@@ -127,11 +127,11 @@
        01  WS-DETAILS-2.
            03 FILLER               PIC X(02).
            03 CV-DATE-O.
-            05 CV-DATE-MONTH-O     PIC 9(02).
-            05 CV-DATE-SEPARATOR-2A PIC X(01).
-            05 CV-DATE-DAY-O       PIC 9(02).
-            05 CV-DATE-SEPARATOR-2B PIC X(01).
             05 CV-DATE-YEAR-O      PIC 9(04).
+            05 CV-DATE-SEPARATOR-2A PIC X(01).
+            05 CV-DATE-MONTH-O     PIC 9(02).
+            05 CV-DATE-SEPARATOR-2B PIC X(01).
+            05 CV-DATE-DAY-O       PIC 9(02).
            03 FILLER               PIC X(02).
            03 CV-NEW-CONFIRMED-O   PIC ZZZZ,ZZZ,ZZ9.
            03 FILLER               PIC X(02).
@@ -209,15 +209,8 @@
            .
       *
        WRITE-RECORD.
-           DISPLAY 'COVID219D:'         COVID19D-REC
-
-           DISPLAY 'Country Code: '     CV-CODE
-           DISPLAY 'Date: '             CV-DATE
-           DISPLAY 'NewConfirmed: '     CV-NEW-CONFIRMED
-
            MOVE SPACES             TO WS-DETAILS-1 WS-DETAILS-2
                                       PRINT-REC
-           DISPLAY 'I AM HERE 1'
       *    CHECKING COUNTRY BREAKING ...
            IF CV-CODE = WS-CODE-PREVIOUS
              MOVE SPACES           TO CV-CODE-O

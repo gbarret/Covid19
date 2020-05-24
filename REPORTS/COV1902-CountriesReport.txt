@@ -1,4 +1,4 @@
-COV1902             *** COUNTRIES REPORT ***                Date:   05/20/2020  Time:   10:47:03            
+COV1902         *** COUNTRIES REPORT ***                Date:   05/23/2020  Time:   22:26:53    Page:      1
 CODE  NAME                                                SLUG
 ====  ==================================================  ==================================================
  AD   Andorra                                             andorra
@@ -44,7 +44,7 @@ CODE  NAME                                                SLUG
  CF   Central African Republic                            central-african-republic
  CG   Congo (Brazzaville)                                 congo-brazzaville
  CH   Switzerland                                         switzerland
- CI   Côte d'Ivoire                                       cote-divoire
+ CI   CÃ´te d'Ivoire                                      cote-divoire
  CK   Cook Islands                                        cook-islands
  CL   Chile                                               chile
  CM   Cameroon                                            cameroon
@@ -64,6 +64,9 @@ CODE  NAME                                                SLUG
  DZ   Algeria                                             algeria
  EC   Ecuador                                             ecuador
  EE   Estonia                                             estonia
+COV1902         *** COUNTRIES REPORT ***                Date:   05/23/2020  Time:   22:26:53    Page:      2
+CODE  NAME                                                SLUG
+====  ==================================================  ==================================================
  EG   Egypt                                               egypt
  EH   Western Sahara                                      western-sahara
  ER   Eritrea                                             eritrea
@@ -130,6 +133,9 @@ CODE  NAME                                                SLUG
  LC   Saint Lucia                                         saint-lucia
  LI   Liechtenstein                                       liechtenstein
  LK   Sri Lanka                                           sri-lanka
+COV1902         *** COUNTRIES REPORT ***                Date:   05/23/2020  Time:   22:26:53    Page:      3
+CODE  NAME                                                SLUG
+====  ==================================================  ==================================================
  LR   Liberia                                             liberia
  LS   Lesotho                                             lesotho
  LT   Lithuania                                           lithuania
@@ -196,6 +202,9 @@ CODE  NAME                                                SLUG
  SB   Solomon Islands                                     solomon-islands
  SC   Seychelles                                          seychelles
  SD   Sudan                                               sudan
+COV1902         *** COUNTRIES REPORT ***                Date:   05/23/2020  Time:   22:26:53    Page:      4
+CODE  NAME                                                SLUG
+====  ==================================================  ==================================================
  SE   Sweden                                              sweden
  SG   Singapore                                           singapore
  SH   Saint Helena                                        saint-helena

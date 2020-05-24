@@ -83,9 +83,9 @@
            MOVE 1   TO WS-OPEN-STATUS   *> Defaults to ERROR ...
            OPEN INPUT COUNTRYS-FILE
            EVALUATE TRUE
-              WHEN WS-COUNTRYS-FILE-STATUS-OK
-                 DISPLAY "*** WS-COUNTRYS-FILE Open was successfully! "
-                 MOVE 0   TO WS-OPEN-STATUS
+               WHEN WS-COUNTRYS-FILE-STATUS-OK
+      *           DISPLAY "*** WS-COUNTRYS-FILE Open was successfully! "
+                  MOVE 0   TO WS-OPEN-STATUS
                WHEN WS-COUNTRYS-FILE-STATUS-ERROR
                  DISPLAY "*** Error opening WS-COUNTRYS-FILE, Status: "
                  WS-COUNTRYS-FILE-STATUS
@@ -96,7 +96,7 @@
       *
        READ-RECORD.
            MOVE LS-C-CODE-TO-READ   TO C-CODE
-           DISPLAY 'LS-C-CODE-TO-READ: ' LS-C-CODE-TO-READ
+      *    DISPLAY 'LS-C-CODE-TO-READ: ' LS-C-CODE-TO-READ
            READ COUNTRYS-FILE
                  KEY IS C-CODE
                  INVALID KEY
@@ -107,6 +107,6 @@
       *
        WRITE-RECORD.
            MOVE COUNTRYS-REC     TO LS-COUNTRYS-REC
-           DISPLAY LS-COUNTRYS-REC
+      *    DISPLAY LS-COUNTRYS-REC
            .
       *
