@@ -3,7 +3,7 @@
       *==============================
        PROGRAM-ID.    COV1903
        AUTHOR.        Georges B.
-      *Report Covid19 Countries ...
+      *Report Covid19 API Data ...
       *==============================
        ENVIRONMENT DIVISION.
       *==============================
