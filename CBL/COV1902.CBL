@@ -37,20 +37,23 @@
       *
        WORKING-STORAGE SECTION.
       *------------------------------
-       01  WS-COUNTRYS-STATUS     PIC 99 VALUE ZEROS.
+       01  WS-COUNTRYS-STATUS      PIC 99 VALUE ZEROS.
       *
        01 FLAGS.
-           03 LASTREC             PIC X VALUE SPACE.
+           03 LASTREC              PIC X VALUE SPACE.
+           03 WS-PAGE-BREAK        PIC 9(02) VALUE 65.
       *
        01  COUNTERS.
-           03 WS-COUNTRYS-T-RECS  PIC 9(05) COMP-3 VALUE ZEROES.
+           03 WS-COUNTRYS-T-RECS   PIC 9(05) COMP-3 VALUE ZEROES.
+           03 WS-PG-WRITTEN-LINES  PIC 9(02) VALUE ZEROS.
+           03 WS-PAGE-NUMBER       PIC 9(05) VALUE ZEROS.
       *
        COPY DATETIME     REPLACING ==:TAG:==      BY ==WS-CURRENT==.
        COPY DATEMDYO     REPLACING ==:TAG:==      BY ==WS-CURRENT==
                                    ==:TAG1:==     BY =='/'==.
       *
        01  WS-HEADER-1.
-           03 FILLER               PIC X(20) VALUE 'COV1902'.
+           03 FILLER               PIC X(16) VALUE 'COV1902'.
            03 TITLE-1              PIC X(40) VALUE
                 '*** COUNTRIES REPORT *** '.
            03 FILLER               PIC X(08) VALUE 'Date: '.
@@ -58,7 +61,10 @@
            03 FILLER               PIC X(02).
            03 FILLER               PIC X(08) VALUE 'Time: '.
            03 TIME-1               PIC X(08).
-           03 FILLER               PIC X(44).
+           03 FILLER               PIC X(04).
+           03 FILLER               PIC X(07) VALUE 'Page: '.
+           03 PAGE-NUMBER          PIC ZZZZ9.
+           03 FILLER               PIC X(28).
       *
        01  WS-HEADER-2.
            03 COUNTRY-CODE        PIC X(04) VALUE 'CODE'.
@@ -103,9 +109,14 @@
            MOVE WS-CURRENT-DATE-O       TO DATE-1
            MOVE WS-CURRENT-TIME-O       TO TIME-1
       *
+           ADD 1                        TO WS-PAGE-NUMBER
+           MOVE WS-PAGE-NUMBER          TO PAGE-NUMBER
+      *
            WRITE PRINT-REC            FROM WS-HEADER-1
+                 AFTER ADVANCING PAGE
            WRITE PRINT-REC            FROM WS-HEADER-2
            WRITE PRINT-REC            FROM WS-HEADER-3
+           MOVE 3                       TO WS-PG-WRITTEN-LINES
            .
       *
        READ-NEXT-RECORD.
@@ -136,14 +147,20 @@
            .
       *
        WRITE-RECORD.
+           IF WS-PG-WRITTEN-LINES > WS-PAGE-BREAK
+             PERFORM WRITE-HEADERS
+             MOVE 0           TO WS-PG-WRITTEN-LINES
+           END-IF
+
       *    DISPLAY 'Country Code: ' C-CODE
       *    DISPLAY 'Country Name: ' C-NAME
       *    DISPLAY 'Country Slug: ' C-SLUG
-           MOVE SPACES       TO   PRINT-REC
+           MOVE SPACES       TO PRINT-REC
            MOVE C-CODE       TO C-CODE-O
            MOVE C-NAME       TO C-NAME-O
            MOVE C-SLUG       TO C-SLUG-O
-      
+
            WRITE PRINT-REC
+           ADD 1             TO WS-PG-WRITTEN-LINES
            .
       *

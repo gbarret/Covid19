@@ -1,0 +1,18 @@
+      *EDITED DAY FORMAT MM/DD/YYY
+      *TAG ==> PREFIX, TAG1 ==> HOUR SEPARATOR LIKE "/" Or "-"
+      * COPY DATEMDY-O REPLACING    ==:TAG:==      BY ==WS-DATE==
+                                   ==:TAG1:==     BY ==/==.
+       01 :TAG:-DATE-TIME-O.
+           03 :TAG:-DATE-O.
+             05 :TAG:-MONTH-O      PIC 9(04).
+             05 FILLER             PIC X VALUE ':TAG1:'.
+             05 :TAG:-DAY-O        PIC 9(02).
+             05 FILLER             PIC X VALUE ':TAG1:'.
+             05 :TAG:-YEAR-O       PIC 9(02).
+           03 :TAG:-TIME-O.
+             05 :TAG:-HOURS-O      PIC 9(04).
+             05 FILLER             PIC X VALUE ':'.
+             05 :TAG:-MINUTES-O    PIC 9(02).
+             05 FILLER             PIC X VALUE ':'.
+             05 :TAG:-SECONDS-O    PIC 9(02).
+
