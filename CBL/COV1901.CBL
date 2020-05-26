@@ -9,23 +9,23 @@
        INPUT-OUTPUT SECTION.
       *-----------------------------
        FILE-CONTROL.
-           SELECT   COVID19CSV-FILE     ASSIGN COV19CSV
-      *             ORGANIZATION        IS LINE SEQUENTIAL
-      *             ACCESS MODE         IS SEQUENTIAL
-      *             FILE STATUS         IS WS-COV19CSV-STATUS
+           SELECT   COVID19CSV-FILE          ASSIGN COV19CSV
+      *             ORGANIZATION             IS LINE SEQUENTIAL
+      *             ACCESS MODE              IS SEQUENTIAL
+      *             FILE STATUS              IS WS-COV19CSV-STATUS
            .
-           SELECT   COUNTRYS-FILE       ASSIGN COUNTRYS
-                    ORGANIZATION        IS INDEXED
-      *             ACCESS MODE         IS SEQUENTIAL
-                    ACCESS MODE         IS RANDOM
-                    RECORD KEY          IS C-CODE
-                    FILE STATUS         IS WS-COUNTRYS-STATUS
+           SELECT   COUNTRYS-FILE            ASSIGN COUNTRYS
+                    ORGANIZATION             IS INDEXED
+      *             ACCESS MODE              IS SEQUENTIAL
+                    ACCESS MODE              IS RANDOM
+                    RECORD KEY               IS C-CODE
+                    FILE STATUS              IS WS-COUNTRYS-STATUS
            .
-           SELECT   COVID19D-FILE       ASSIGN COVID19D
-                    ORGANIZATION        IS INDEXED
-                    ACCESS MODE         IS RANDOM
-                    RECORD KEY          IS CV-CODE-DATE
-                    FILE STATUS         IS WS-COVID19D-STATUS
+           SELECT   COVID19D-FILE            ASSIGN COVID19D
+                    ORGANIZATION             IS INDEXED
+                    ACCESS MODE              IS RANDOM
+                    RECORD KEY               IS CV-CODE-DATE
+                    FILE STATUS              IS WS-COVID19D-STATUS
            .
       *=============================
        DATA DIVISION.
@@ -54,7 +54,8 @@
       *-----------------------------
        WORKING-STORAGE SECTION.
       *-----------------------------
-       77  WS-NUMERIC-TMP          PIC 9(6) VALUE ZEROES.
+       77  WS-FILE-LOAD-DATE       PIC X(10) VALUE SPACES.
+      *
        01  WS-FILES-STATUS.
            03  WS-COV19CSV-STATUS  PIC 99 VALUE ZEROS.
            03  WS-COUNTRYS-STATUS  PIC 99 VALUE ZEROS.
@@ -79,19 +80,8 @@
        01  WS-UNSTRING-DATA.
            03 WS-CTL-1             PIC 9(3) VALUE ZEROES.
            03 WS-CTL-2             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-3             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-4             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-5             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-6             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-7             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-8             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-9             PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-10            PIC 9(3) VALUE ZEROES.
-           03 WS-CTL-11            PIC 9(3) VALUE ZEROES.
            03 WS-DELIMITER-1       PIC X    VALUE SPACES.
            03 WS-DELIMITER-2       PIC X    VALUE SPACES.
-           03 WS-DELIMITER-3       PIC X    VALUE SPACES.
-           03 WS-DELIMITER-4       PIC X    VALUE SPACES.
            03 WS-POINTER-1         PIC 9(3) VALUE ZEROES.
            03 WS-POINTER-2         PIC 9(3) VALUE ZEROES.
       *    *** Additional characters used for second unstring ...
@@ -116,25 +106,24 @@
            03 WS-NEW-RECOVERED     PIC 9(9)    VALUE ZEROES.
            03 WS-TOTAL-RECOVERED   PIC 9(9)    VALUE ZEROES.
            03 WS-DATE-TIME-QUOTED.
-              05 FILLER            PIC X       VALUE SPACE.
-              05 WS-DATE-TIME           PIC X(21)   VALUE SPACES.
-              05 WS-DATE-TIME-R REDEFINES WS-DATE-TIME.
-                 07 WS-DATE.
-                    09 WS-DATE-YEAR   PIC X(04).
-                    09 FILLER         PIC X.
-                    09 WS-DATE-MONTH  PIC X(02).
-                    09 FILLER         PIC X.
-                    09 WS-DATE-DAY    PIC X(02).
-                 07 WS-TIME.
-                    09 FILLER         PIC X.
-                    09 WS-TIME-HH     PIC X(02).
-                    09 FILLER         PIC X.
-                    09 WS-TIME-MM     PIC X(02).
-                    09 FILLER         PIC X.
-                    09 WS-TIME-SS     PIC X(02).
-                 07 FILLER         PIC X.   *>Time Zone? ==> Z
-                 07 FILLER         PIC X.   *>This is the closing quote
-
+            05 FILLER              PIC X       VALUE SPACE.
+            05 WS-DATE-TIME        PIC X(21)   VALUE SPACES.
+            05 WS-DATE-TIME-R REDEFINES WS-DATE-TIME.
+             07 WS-DATE.
+              09 WS-DATE-YEAR      PIC X(04).
+              09 FILLER            PIC X.
+              09 WS-DATE-MONTH     PIC X(02).
+              09 FILLER            PIC X.
+              09 WS-DATE-DAY       PIC X(02).
+             07 WS-TIME.
+              09 FILLER            PIC X.
+              09 WS-TIME-HH        PIC X(02).
+              09 FILLER            PIC X.
+              09 WS-TIME-MM        PIC X(02).
+              09 FILLER            PIC X.
+              09 WS-TIME-SS        PIC X(02).
+             07 FILLER             PIC X.   *>Time Zone? ==> Z
+             07 FILLER             PIC X.   *>This is the closing quote
       *=============================
        PROCEDURE DIVISION.
       *=============================
@@ -210,7 +199,7 @@
            .
       *
        GET-INPUT-DATA.
-      *I need to different UNSTRING statements because Country can
+      *I need two different UNSTRING statements because Country can
       * include a comma, like "Iran, Islamic Republic of"
       *Using WS-POINTER-1, I am trying to skip the first quote ...
            MOVE 2                  TO WS-POINTER-1
@@ -247,15 +236,16 @@
              REPLACING ALL QUOTES BY SPACE
            INSPECT WS-DATE-TIME
               REPLACING ALL QUOTES BY SPACE
+           MOVE WS-DATE                 TO  WS-FILE-LOAD-DATE
       *
-           IF WS-SLUG = 'iran'
-             DISPLAY '*** WS-COUNTRY: '   WS-COUNTRY
-             DISPLAY '*** WS-DEL-1: '     WS-DELIMITER-1
-             DISPLAY '*** WS-CTL-1: '     WS-CTL-1
-             DISPLAY '*** WS-DEL-2: '     WS-DELIMITER-2
-             DISPLAY '*** WS-CTL-2: '     WS-CTL-2
-             DISPLAY '*** WS-POINTER-1: ' WS-POINTER-1
-           END-IF
+      *     IF WS-SLUG = 'iran'
+      *       DISPLAY '*** WS-COUNTRY: '   WS-COUNTRY
+      *       DISPLAY '*** WS-DEL-1: '     WS-DELIMITER-1
+      *       DISPLAY '*** WS-CTL-1: '     WS-CTL-1
+      *       DISPLAY '*** WS-DEL-2: '     WS-DELIMITER-2
+      *       DISPLAY '*** WS-CTL-2: '     WS-CTL-2
+      *       DISPLAY '*** WS-POINTER-1: ' WS-POINTER-1
+      *     END-IF
            .
       *
        WRITE-FILES.
@@ -301,8 +291,8 @@
       *
        WRITE-COUNTRYS.
            PERFORM BUILD-OUTPUT-COUNTRYS
-           DISPLAY 'COUNTRYS INFO : '
-             'CODE:' C-CODE ' NAME:' C-NAME ' SLUG: ' C-SLUG
+      *    DISPLAY 'COUNTRYS INFO : '
+      *       'CODE:' C-CODE ' NAME:' C-NAME ' SLUG: ' C-SLUG
            WRITE COUNTRYS-REC
            IF WS-COUNTRYS-STATUS > 0
                 DISPLAY '*** Error writing COUNTRYS-FILE: '
@@ -365,14 +355,15 @@
            MOVE WS-NEW-RECOVERED   TO CV-NEW-RECOVERED
            MOVE WS-TOTAL-RECOVERED TO CV-TOTAL-RECOVERED
 
-           DISPLAY 'CC:' WS-COUNTRY-CODE ' Y:' WS-DATE-YEAR
-             ' M:' WS-DATE-MONTH ' D:' WS-DATE-DAY
-           DISPLAY  'NC:' WS-NEW-CONFIRMED ' TC:'    WS-TOTAL-CONFIRMED
-                    ' ND:'  WS-NEW-DEATHS ' TD:'     WS-TOTAL-DEATHS
-                    ' NR:'  WS-NEW-RECOVERED ' TR:'  WS-TOTAL-RECOVERED
+      *     DISPLAY 'CC:' WS-COUNTRY-CODE ' Y:' WS-DATE-YEAR
+      *       ' M:' WS-DATE-MONTH ' D:' WS-DATE-DAY
+      *     DISPLAY  'NC:' WS-NEW-CONFIRMED ' TC:'    WS-TOTAL-CONFIRMED
+      *              ' ND:'  WS-NEW-DEATHS ' TD:'     WS-TOTAL-DEATHS
+      *              ' NR:'  WS-NEW-RECOVERED ' TR:'  WS-TOTAL-RECOVERED
            .
       *
        WRITE-TRAILERS.
+           DISPLAY 'FILE LOADED FOR DATE: '       WS-FILE-LOAD-DATE
            DISPLAY 'COVID19CSV records READ: '    WS-COVID19CSV-READ
            DISPLAY 'COUNTRYS records INSERTED: '  WS-COUNTRYS-INSERTED
            DISPLAY 'COUNTRYS records UPDATED: '   WS-COUNTRYS-UPDATED
